@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIS Management Page</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- navgation bar section -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Helwan Logo copy.png" alt="University Logo">
+            <span>Helwan University Faculty Of Commerce & Business Administration</span>
+        </div>
+        <div class="logo">
+            <img src="Logo.png" alt="College Logo">
+            <span>Business Information Systems (BIS)</span>
+        </div>
+        <div class="time-widget">
+          <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Africa%2FCairo" width="100%" height="90" frameborder="0" seamless></iframe>
+      </div>      
+        <div class="buttons">
+            <button class="logout-button"><a style="text-decoration: none;font-weight: bold; color: white;" href="https://ahmedhossam911.github.io/BIS-Login/">Logout</a></button>
+        </div>
+    </nav>
+    <!-- buttons section -->
+    <section class="student-section">
+        <div class="open-popup-buttons">
+            <button id="openAnnouncementButton" class="open-popup-button">Announcement
+                <img class="buttonIMG" src="ann.png" alt="leganMid">
+                <img class="un_LOCKEDIMG" style="width: 20px; height: 20px;" src="unlocked .jpg" alt="unlocked">
+            </button>
+
+            <button id="openCoursesScheduleButton" class="open-popup-button">Courses Schedule
+                <img class="buttonIMG" src="schedule.png" alt="Project">
+                <img class="un_LOCKEDIMG" style="width: 20px; height: 20px;" src="unlocked .jpg" alt="unlocked">
+            </button>
+
+            <button id="openStudentClassworkButton" class="open-popup-button">Student Classwork
+              <img class="buttonIMG" src="evaluation.png" alt="cerfificate">
+              <img class="un_LOCKEDIMG" style="width: 20px; height: 20px;" src="unlocked .jpg" alt="unlocked">
+          </button>
+
+            <button id="openMedicalCareButton" class="open-popup-button">Medical Care
+                <img class="buttonIMG" src="medical care  copy.png" alt="cerfificate">
+                <img class="un_LOCKEDIMG" style="width: 20px; height: 20px;" src="unlocked .jpg" alt="unlocked">
+            </button>
+
+            <button id="openYourInfoButton" class="open-popup-button">Your Info
+              <img class="buttonIMG" src="info.png" alt="cerfificate">
+              <img class="un_LOCKEDIMG" style="width: 20px; height: 20px;" src="unlocked .jpg" alt="unlocked">
+          </button>
+
+          </div>
+    </section>
+        
+<!-- popup section for Courses Schedule  -->
+<div id="popup_Courses_Schedule" class="popup">
+    <div class="popup-content">
+        <span class="close-button" id="close-button">&times;</span>
+        <table>
+            <h2 style="color: red;" >Courses Schedule </h2>
+            <tr style="color: white;">
+              <th style="background-color: #172533;">Course Name</th>
+              <th>Credit Hours</th>
+              <th>Day</th>
+              <th>Time</th>
+              <th>Group Number</th>
+              <th>Room Number</th>
+              <th>Teams Code</th>
+            </tr>
+    
+    
+            <tr style="color: white;">
+              <th colspan="7" style="background-color: #172533;">Sections</th>
+            </tr>
+    
+          <tr>
+            <td>Accounting for Corporations </td>
+            <td>3</td>
+            <td>Thursday</td>
+            <td>1 : 2.30</td>
+            <td>G3</td>
+            <td>19</td>
+            <td>csaf18</td>
+          </tr>
+    
+          <tr>
+            <td>Cost Accounting </td>
+            <td>3</td>
+            <td>Sunday</td>
+            <td>2.30 : 3.30</td>
+            <td>G9</td>
+            <td>18</td>
+            <td>csaf18</td>
+          </tr>
+    
+          <tr>
+            <td>Accounting 1</td>
+            <td>3</td>
+            <td>Wednesday</td>
+            <td>1 : 2.30</td>
+            <td>G13</td>
+            <td>22</td>
+            <td>csaf18</td>
+          </tr>
+    
+          </table>
+    </div>
+</div>
+
+<!-- popup section for Announcement  -->
+<div id="popup_announcement" class="popup">
+    <div class="popup-content">
+        <span class="close-button" id="close-button">&times;</span>
+        <section id="home">
+            <h2 style="color: red;" >Announcement</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">
+                        <img src="ad 5.jpg" alt="Ad 5">
+                    </div>
+                    <div class="slide">
+                        <img src="ad 4.jpg" alt="Ad 4">
+                    </div>
+                    <div class="slide">
+                        <img src="ad 3.jpg" alt="Ad 3">
+                    </div>
+                    <div class="slide">
+                        <img src="ad 2.jpg" alt="Ad 2">
+                    </div>
+                </div>
+                <button class="prev-btn">&#10094;</button>
+                <button class="next-btn">&#10095;</button>
+            </div>
+        </section>
+    
+    </div>
+</div>
+
+<!-- popup section for medical care  -->
+<div id="popup_medical_care" class="popup">
+    <div class="popup-content">
+        <span class="close-button" id="close-button">&times;</span>
+        <h2 style="color: red;">Medical Care</h2>
+        <div class="container">
+            <h2 style="color: red;">نموذج حجز موعد طبي</h2>
+            <form id="appointmentForm">
+              <label for="hospital">اسم المستشفى</label>
+              <select id="hospital" required>
+                <option value="" disabled selected>اختر المستشفى</option>
+                <option value="helwan"> مستشفى حلوان الجامعي</option>
+                <option value="badr">مستشفى بدر الجامعي</option>
+              </select>
+              
+              <label for="specialty">التخصص الطبي</label>
+              <select id="specialty" required>
+                <option value="" disabled selected>اختر التخصص</option>
+                <option value="helwan">  القلب ولاوعية الدموية</option>
+                <option value="helwan"> الاسنان </option>
+                <option value="helwan"> امراض الكلي </option>
+                <option value="helwan"> العلاج الطبيعي </option>
+                <option value="helwan"> التحاليل الطبية </option>
+                <option value="helwan"> الجلدية</option>
+                <option value="helwan"> الرمد</option>
+                <option value="helwan"> انف وذن وحنجرة</option>
+                <option value="helwan">عظام</option>
+                <option value="helwan">باطنة</option>
+                <option value="helwan">الامراض التنفسية</option>
+              </select>
+              
+              <label for="date">التاريخ المفضل للموعد</label>
+              <input style="width: 280px;" type="date" id="date" required>
+        
+              <br><br>
+              
+              <button type="submit">حجز الموعد</button>
+            </form>
+            <p id="successMessage" >تم حجز الموعد بنجاح! سنتواصل معك قريبًا لتأكيد التفاصيل.</p>
+          </div>        
+    </div>
+</div>
+
+<!-- popup section for Your Info  -->
+<div id="popup_Your_Info" class="popup">
+    <div class="popup-content">
+        <span class="close-button" id="close-button">&times;</span>
+        <h2 style="color: red;" >Your Info</h2>
+            <table>
+                <tr style=" color: white;">
+                <th style=" background-color: #172533 ;">Doctor Name</th>
+                <th style=" background-color: #fff ; color: black;">DR:xxxxxxx </th>
+                <th>Doctor ID</th>
+                <th style=" background-color: #fff ; color: black;">2654</th>
+            </tr>
+  
+            <tr style=" color: white;">
+                <th style=" background-color: #172533 ;">E-Mail</th>
+                <th colspan="4" style=" background-color: #fff ; color: black;">xxxxx xxxxxx.155484@commerce.helwan.edu.eg</th>
+            </tr>
+        
+            <tr style=" color: white;">
+                <th style=" background-color: #172533 ;">Your Academic Degree </th>
+                <th colspan="4" style=" background-color: #fff ; color: black;">Teaching Assaistant</th>
+            </tr>
+        
+            <tr style=" color: white;">
+                <th style=" background-color: #172533 ;">Your salary </th>
+                <th colspan="4" style=" background-color: #fff ; color: black;">15000 EGP</th>
+            </tr>
+        
+            <tr style=" color: white;">
+                <th style=" background-color: #172533 ;">Courses You teach </th>
+                <th  style=" background-color: #fff ; color: black;">Accounting 1</th>
+                <th  style=" background-color: #fff ; color: black;">Cost Accounting</th>
+                <th  style=" background-color: #fff ; color: black;">Accounting for Corporations</th>
+            </tr>
+
+              </table>
+    </div>
+</div>
+
+<!-- popup section Registration of classwork grades -->
+<div id="popup_Student_Classwork" class="popup">
+    <div class="popup-content">
+        <span class="close-button" id="close-button">&times;</span>
+        <h2 style="color: red;">Registration of classwork grades</h2>
+        <table id="marksTableGroup1" class="marksTable" style="display: none;">
+            <thead>
+              <tr>
+                <th style="background-color: #172533; color: white;">NO.</th>
+                <th style="background-color: #172533; color: white;">Student Name</th>
+                <th style="background-color: #172533; color: white;">Student ID</th>
+                <th style="background-color: #172533; color: white;">Student Group</th>
+                <th style="background-color: #172533; color: white;">Student Marks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Student rows will be added here manually -->
+              <tr>
+                <td  style="background-color: #172533; color: white;">1</td>
+                <td>ابرار صباح جبار غانم</td>
+                <td>22230555</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">2</td>
+                <td>احمد صالح جندي علي</td>
+                <td>22230254</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">3</td>
+                <td>احمد محسن ضبع شلال</td>
+                <td>22230154</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">4</td>
+                <td>الاء محمد علي حسين</td>
+                <td>22230415</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">5</td>
+                <td>يوسف محمد محمود</td>
+                <td>22232408</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">6</td>
+                <td>محمد اشرف علي </td>
+                <td>22230785</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">7</td>
+                <td>ياسر ابراهيم محمد</td>
+                <td>22230887</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">8</td>
+                <td>خالد عبدالرحمن سيد</td>
+                <td>22230288</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">9</td>
+                <td>مؤنس ياسر شعبان</td>
+                <td>22230549</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">10</td>
+                <td>شريف محمد خالد</td>
+                <td>22230148</td>
+                <td>Group 1</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+            </tbody>
+          </table>
+        
+          <!-- Group 2 Table -->
+          <table id="marksTableGroup2" class="marksTable" style="display: none;">
+            <thead>
+              <tr>
+                <th style="background-color: #172533; color: white;">NO.</th>
+                <th style="background-color: #172533; color: white;">Student Name</th>
+                <th style="background-color: #172533; color: white;">Student ID</th>
+                <th style="background-color: #172533; color: white;">Student Group</th>
+                <th style="background-color: #172533; color: white;">Student Marks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="background-color: #172533; color: white;">1</td>
+                <td>خالد عبدالرحمن سيد</td>
+                <td>22230288</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td  style="background-color: #172533; color: white;">2</td>
+                <td>ابرار صباح جبار غانم</td>
+                <td>22230555</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+              <tr>
+                <td style="background-color: #172533; color: white;">3</td>
+                <td>يوسف محمد محمود</td>
+                <td>22232408</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">4</td>
+                <td>احمد صالح جندي علي</td>
+                <td>22230254</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">5</td>
+                <td>الاء محمد علي حسين</td>
+                <td>22230415</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">6</td>
+                <td>احمد محسن ضبع شلال</td>
+                <td>22230154</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              
+              <tr>
+                <td style="background-color: #172533; color: white;">7</td>
+                <td>  شريف محمد خالد  </td>
+                <td>22230148</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">8</td>
+                <td>ياسر ابراهيم محمد</td>
+                <td>22230887</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">9</td>
+                <td>محمد اشرف علي </td>
+                <td>22230785</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">10</td>
+                <td>مؤنس ياسر شعبان</td>
+                <td>22230549</td>
+                <td>Group 2</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+        
+            </tbody>
+          </table>
+        
+          <!-- Group 3 Table -->
+          <table id="marksTableGroup3" class="marksTable" style="display: none;">
+            <thead>
+              <tr>
+                <th style="background-color: #172533; color: white;">NO.</th>
+                <th style="background-color: #172533; color: white;">Student Name</th>
+                <th style="background-color: #172533; color: white;">Student ID</th>
+                <th style="background-color: #172533; color: white;">Student Group</th>
+                <th style="background-color: #172533; color: white;">Student Marks</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">1</td>
+                <td>احمد صالح جندي علي</td>
+                <td>22230254</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">2</td>
+                <td>خالد عبدالرحمن سيد</td>
+                <td>22230288</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">3</td>
+                <td>يوسف محمد محمود</td>
+                <td>22232408</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td  style="background-color: #172533; color: white;">4</td>
+                <td>ابرار صباح جبار غانم</td>
+                <td>22230555</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">5</td>
+                <td>الاء محمد علي حسين</td>
+                <td>22230415</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">6</td>
+                <td>مؤنس ياسر شعبان</td>
+                <td>22230549</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">7</td>
+                <td>احمد محسن ضبع شلال</td>
+                <td>22230154</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+         
+              <tr>
+                <td style="background-color: #172533; color: white;">8</td>
+                <td>ياسر ابراهيم محمد</td>
+                <td>22230887</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">9</td>
+                <td>  شريف محمد خالد  </td>
+                <td>22230148</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+              <tr>
+                <td style="background-color: #172533; color: white;">10</td>
+                <td>محمد اشرف علي </td>
+                <td>22230785</td>
+                <td>Group 3</td>
+                <td><input type="number" class="marksInput"></td>
+              </tr>
+        
+        
+        
+        
+        
+            </tbody>
+          </table>
+        
+          <div id="groupButtons" style="text-align: center;">
+            <button class="groupBtn" data-group="Group1" onclick="showTable('Group1')">Group 1</button>
+            <button class="groupBtn" data-group="Group2" onclick="showTable('Group2')">Group 2</button>
+            <button class="groupBtn" data-group="Group3" onclick="showTable('Group3')">Group 3</button>
+          </div>
+        
+          <p id="downloadLink" style="display:none;">Thank You for your submiton</p>
+
+
+          <div style="text-align: center; margin-top: 20px;">
+            <button id="submitBtn" style="padding: 10px 20px; font-size: 16px; background-color: #172533; border: none; border-radius: 5px; color: white; cursor: pointer;">
+              Submit
+            </button>
+          </div>
+        
+    </div>
+</div>
+
+<!-- popup section for footer-->
+<footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <img src="fb.png" alt="Logo 1">
+        <a href="https://www.facebook.com/BIS.FCBA.Helwan.uni">Facebook</a>
+      </div>
+      <div class="footer-section">
+        <img src="facebook-group-facebook-group-icon-png.png" alt="Logo 2">
+        <a href="https://www.facebook.com/groups/483323791827046">Facebook Group</a>
+      </div>
+      <div class="footer-section">
+        <img src="internet-web-icon-in-trendy-flat-style-isolated-on-white-background-website-symbol-for-your-website-design-logo-app-ui-illustration-free-vector.jpg" alt="Logo 3">
+        <a href="http://fcba.helwan.edu.eg/?fbclid=IwAR0j-OzzCcLZYOopsVdb20qZjHnQSwaYPbwM559rsuC6jn_Dftdse0RUILw">Faculty Website</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Business Information Systems (BIS). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="rotate-message">
+    <p>Please rotate your device for a better viewing experience.</p>
+    <p>من فضلك ادر شاشة الهاتف للحصول علي تجربة افضل </p>
+    <button id="closeRotateMessage">Close</button>
+  </div>
+  
+</body>
+</html>
